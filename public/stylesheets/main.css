@@ -2,6 +2,10 @@ body {
 	margin: 30px;
 }
 
+a:link {
+	color: inherit;
+}
+
 #title {
 	text-align: center;
 }
@@ -35,6 +39,10 @@ body {
 .book-title  {
 	text-decoration: underline;
 	font-weight: bold;
+}
+
+.book-author {
+	text-decoration: none;
 }
 
 .book-price {

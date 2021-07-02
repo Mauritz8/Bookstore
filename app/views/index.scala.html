@@ -7,12 +7,12 @@
 		@for(book <- books) {
 		<div id=book-div>
 			<div class="book">
-				<img class="book-cover-image" src="@book.getCoverImg()" width=200px height=300px>
+				<a href="/book/@book.getId()"><img class="book-cover-image" src="@book.getCoverImg()" width=200px height=300px></a>
 				<div class="title-and-author">
-					<p class="book-title">@book.getTitle()</p>
-					<p class="book-author">@book.getAuthor()</p>
+					<a href="/book/@book.getId()"><p class="book-title">@book.getTitle()</p></a>
+					<a href="/author"<p class="book-author">@book.getAuthor()</p></a>
 				</div>
-				<p class="book-price">@book.getPrice() kr</p>
+				<p class="book-price">@book.getPrice()$</p>
 			</div>
 		</div>
 		}

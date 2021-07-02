@@ -3,7 +3,6 @@ package controllers;
 import play.mvc.*;
 
 import models.Book;
-import java.util.*;
 
 /**
  * This controller contains an action to handle HTTP requests
@@ -18,8 +17,11 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() {
-
         return ok(views.html.index.render(Book.getBooks()));
     }
+
+	public Result book(int id) {
+		return ok(views.html.book.render(Book.getBooks(), id));
+	}
 
 }
