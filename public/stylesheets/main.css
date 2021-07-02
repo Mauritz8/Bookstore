@@ -1,5 +1,5 @@
 body {
-	margin: 20px;
+	margin: 30px;
 }
 
 #title {
@@ -8,7 +8,9 @@ body {
 
 #books {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-column-gap: 30px;
+	grid-row-gap: 30px;
 }
 
 #book-div {
@@ -20,9 +22,26 @@ body {
 	height: fit-content;
 	width: 200px;
 	margin: 0 auto;
-	padding: 10px 10px;
 }
 
 .book p:nth-of-type(2) {
 	margin-bottom: 0;
+}
+
+.title-and-author {
+	height: 80px;
+}
+
+.book-title  {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.book-price {
+	background-color: #ED1C24;
+	color: white;
+	font-size: 20px;
+	border-radius: 20px;
+	margin-top: 5px;
+	padding: 8px 0;
 }

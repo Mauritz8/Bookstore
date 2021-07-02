@@ -34,9 +34,9 @@ public class Book {
 
 	public static ArrayList<Book> getBooks() {
 
-		String[] bookTitles = {"How to program in java play framework", "How to learn java", "Why linux is better than windows"};
-		String[] bookAuthors = {"Mauritz", "Mauritz", "Martin"};
-		int[] bookPrices = {99, 78, 149};
+		String[] bookTitles = {"How to program in java play framework", "How to learn java", "Why linux is better than windows", "Why I love java", "Should you learn C#?", "How to program in java play framework", "How to learn java", "Why linux is better than windows", "Why I love java", "Should you learn C#?"};
+		String[] bookAuthors = {"Mauritz", "Mauritz", "Martin", "Everyone", "Tobias", "Mauritz", "Mauritz", "Martin", "Everyone", "Tobias"};
+		int[] bookPrices = {99, 78, 149, 199, 129, 99, 78, 149, 199, 129};
 
 		ArrayList<Book> books = new ArrayList<Book>(); 
 

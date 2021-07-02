@@ -8,8 +8,11 @@
 		<div id=book-div>
 			<div class="book">
 				<img class="book-cover-image" src="@book.getCoverImg()" width=200px height=300px>
-				<p class="book-title">@book.getTitle()</p>
-				<p class="book-author">@book.getAuthor()</p>
+				<div class="title-and-author">
+					<p class="book-title">@book.getTitle()</p>
+					<p class="book-author">@book.getAuthor()</p>
+				</div>
+				<p class="book-price">@book.getPrice() kr</p>
 			</div>
 		</div>
 		}
