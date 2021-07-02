@@ -1,0 +1,14 @@
+@(books: List[models.Book])
+
+@main("Bookstore") {
+	<h1 id="title">Bookstore</h1>
+
+	<div id="books">
+		@for(book <- books) {
+		<div class="book">
+			<p class="book-title">@book.getTitle()</p>
+			<p class="book-author">@book.getAuthor()</p>
+		</div>
+		}
+	</div>
+}

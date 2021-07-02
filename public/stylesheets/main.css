@@ -1,0 +1,18 @@
+body {
+	margin: 20px;
+}
+
+#title {
+	text-align: center;
+}
+
+#books {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	grid-column-gap: 20px;
+}
+
+.book {
+	border: 2px solid #000000;
+	text-align: center;
+}
