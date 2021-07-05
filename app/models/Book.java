@@ -1,6 +1,7 @@
 package models;
 
 import java.util.ArrayList;
+import java.sql.*;
 
 public class Book {
 
@@ -40,16 +41,32 @@ public class Book {
 
 	public static ArrayList<Book> getBooks() {
 
-		String[] bookTitles = {"How to program in java play framework", "How to learn java", "Why linux is better than windows", "Why I love java", "Should you learn C#?", "How to program in java play framework", "How to learn java", "Why linux is better than windows", "Why I love java", "Should you learn C#?"};
-		String[] bookAuthors = {"Mauritz", "Mauritz", "Martin", "Everyone", "Tobias", "Mauritz", "Mauritz", "Martin", "Everyone", "Tobias"};
-		double[] bookPrices = {9.9, 7.8, 14.9, 19.9, 12.9, 9.9, 7.8, 14.9, 19.9, 12.9};
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection(
+				"jdbc:mysql://localhost:3306/Bookstore","mauritz","1234"
+				);
 
-		ArrayList<Book> books = new ArrayList<Book>(); 
+			Statement stmt = con.createStatement();
+            ResultSet booksTable = stmt.executeQuery("select * from books");
+			ArrayList<Book> books = new ArrayList<Book>(); 
 
-		for (int i=0; i<bookTitles.length; i++) {
-			books.add(new Book(i, bookTitles[i], bookAuthors[i], "/assets/images/book-cover.jpg", bookPrices[i]));
+            while (booksTable.next()) {
+				int id = booksTable.getInt(1);
+				String title = booksTable.getString(2);
+				String author = booksTable.getString(3);
+				String coverImg = booksTable.getString(4);
+				double price = booksTable.getDouble(5);
+
+				books.add(new Book(id, title, author, coverImg, price));
+            }
+			return books;
+
+		} catch(Exception e) {
+				System.out.println(e);
 		}
 
-		return books;
+		return new ArrayList<Book>();
 	}
+
 }
