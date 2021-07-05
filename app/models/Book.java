@@ -69,4 +69,17 @@ public class Book {
 		return new ArrayList<Book>();
 	}
 
+	public static ArrayList<Book> getAllBooksFromAuthor(String author) {
+		ArrayList<Book> booksFromAuthor = new ArrayList<Book>();
+		ArrayList<Book> allBooks = getBooks();
+
+		for (Book book : allBooks) {
+			if (book.author.equals(author)) {
+				booksFromAuthor.add(book);
+			}	
+		}
+
+		return booksFromAuthor;
+	}
+
 }

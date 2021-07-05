@@ -3,6 +3,7 @@ package controllers;
 import play.mvc.*;
 
 import models.Book;
+import java.util.ArrayList;
 
 /**
  * This controller contains an action to handle HTTP requests
@@ -22,6 +23,11 @@ public class HomeController extends Controller {
 
 	public Result book(int id) {
 		return ok(views.html.book.render(Book.getBooks(), id));
+	}
+
+	public Result author(String author) {
+		ArrayList<Book> booksFromAuthor = Book.getAllBooksFromAuthor(author);
+		return ok(views.html.author.render(author, booksFromAuthor));
 	}
 
 }

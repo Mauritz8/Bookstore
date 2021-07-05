@@ -11,3 +11,6 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 # Page showing more information about the specified book
 GET     /book/:id                           controllers.HomeController.book(id: Integer)
+
+# Page showing all books from an author
+GET     /author/:author                           controllers.HomeController.author(author: String)

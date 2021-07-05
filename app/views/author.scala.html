@@ -1,10 +1,10 @@
-@(books: List[models.Book])
+@(author: String, booksFromAuthor: List[models.Book])
 
-@main("Bookstore") {
-	<h1 id="title">Bookstore</h1>
+@main("author") {
+	<h1 id="title">@author</h1>
 
 	<div id="books">
-		@for(book <- books) {
+		@for(book <- booksFromAuthor) {
 		<div id=book-div>
 			<div class="book">
 				<a href="/book/@book.getId()"><img class="book-cover-image" src="@book.getCoverImg()" width=100% </a>
