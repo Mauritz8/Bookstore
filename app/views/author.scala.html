@@ -1,7 +1,7 @@
 @(author: String, booksFromAuthor: List[models.Book])
 
-@main("author") {
-	<h1 id="title">@author</h1>
+@main("Författare") {
+	<h1 id="title">Böcker skrivna av @author</h1>
 
 	<div id="books">
 		@for(book <- booksFromAuthor) {
@@ -12,7 +12,7 @@
 					<a href="/book/@book.getId()"><p class="book-title">@book.getTitle()</p></a>
 					<a href="/author/@book.getAuthor()"<p class="book-author">@book.getAuthor()</p></a>
 				</div>
-				<p class="book-price">@book.getPrice()$</p>
+				<p class="book-price">@book.getPrice() kr</p>
 			</div>
 		</div>
 		}

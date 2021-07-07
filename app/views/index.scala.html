@@ -1,7 +1,7 @@
 @(books: List[models.Book])
 
-@main("Bookstore") {
-	<h1 id="title">Bookstore</h1>
+@main("Bokhandel") {
+	<h1 id="title">Bokhandel</h1>
 
 	<div id="books">
 		@for(book <- books) {
@@ -12,7 +12,7 @@
 					<a href="/book/@book.getId()"><p class="book-title">@book.getTitle()</p></a>
 					<a href="/author/@book.getAuthor()"<p class="book-author">@book.getAuthor()</p></a>
 				</div>
-				<p class="book-price">@book.getPrice()$</p>
+				<p class="book-price">@book.getPrice() kr</p>
 			</div>
 		</div>
 		}
