@@ -9,9 +9,9 @@ public class Book {
 	String title;
 	String author;
 	String coverImg;
-	double price;
+	int price;
 
-	Book(int id, String title, String author, String coverImg, double price) {
+	Book(int id, String title, String author, String coverImg, int price) {
 		this.id = id;
 		this.title = title;
 		this.author = author;
@@ -35,7 +35,7 @@ public class Book {
 		return coverImg;
 	}
 
-	public double getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
@@ -56,7 +56,7 @@ public class Book {
 				String title = booksTable.getString(2);
 				String author = booksTable.getString(3);
 				String coverImg = booksTable.getString(4);
-				double price = booksTable.getDouble(5);
+				int price = booksTable.getInt(5);
 
 				books.add(new Book(id, title, author, coverImg, price));
             }

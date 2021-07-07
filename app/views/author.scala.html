@@ -7,7 +7,9 @@
 		@for(book <- booksFromAuthor) {
 		<div id=book-div>
 			<div class="book">
-				<a href="/book/@book.getId()"><img class="book-cover-image" src="@book.getCoverImg()" width=100% </a>
+				<div class="book-cover-image-wrapper">
+					<a href="/book/@book.getId()"><img class="book-cover-image" src="@book.getCoverImg()" width=100% </a>
+				</div>
 				<div class="title-and-author">
 					<a href="/book/@book.getId()"><p class="book-title">@book.getTitle()</p></a>
 					<a href="/author/@book.getAuthor()"<p class="book-author">@book.getAuthor()</p></a>

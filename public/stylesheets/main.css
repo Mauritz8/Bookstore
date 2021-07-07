@@ -28,7 +28,15 @@ a:link {
 	margin: 0 auto;
 }
 
+.book-cover-image-wrapper {
+	position: relative;
+}
+
 .book-cover-image {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
 }
 
 .book p:nth-of-type(2) {
