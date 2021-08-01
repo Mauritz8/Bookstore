@@ -1,32 +1,30 @@
 package controllers;
 
-import play.mvc.*;
-
 import models.Book;
-import java.util.ArrayList;
+import services.BookService;
+import play.mvc.Controller;
+import play.mvc.Result;
 
-/**
- * This controller contains an action to handle HTTP requests
- * to the application's home page.
- */
+import javax.inject.Inject;
+import java.util.List;
+
 public class HomeController extends Controller {
 
-    /**
-     * An action that renders an HTML page with a welcome message.
-     * The configuration in the <code>routes</code> file means that
-     * this method will be called when the application receives a
-     * <code>GET</code> request with a path of <code>/</code>.
-     */
-    public Result index() {
-        return ok(views.html.index.render(Book.getBooks()));
-    }
+	@Inject
+	BookService bookService;
+
+	public Result index() {
+		List<Book> books = bookService.getAllBooks();
+		return ok(views.html.index.render(books));
+	}
 
 	public Result book(int id) {
-		return ok(views.html.book.render(Book.getBooks(), id));
+		Book book = bookService.getBook(id);
+		return ok(views.html.book.render(book));
 	}
 
 	public Result author(String author) {
-		ArrayList<Book> booksFromAuthor = Book.getAllBooksFromAuthor(author);
+		List<Book> booksFromAuthor = bookService.getBooksFromAuthor(author);
 		return ok(views.html.author.render(author, booksFromAuthor));
 	}
 
