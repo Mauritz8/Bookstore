@@ -1,8 +1,8 @@
-@(books: List[models.Book], id: Integer)
+@(book: models.Book)
 
 @main("Bok") {
-	<h1>Titel: @books.get(id).getTitle()</h1>
-	<h1>Författare: @books.get(id).getAuthor()</h1>
-	<h1>Pris: @books.get(id).getPrice() kr</h1>
-	<img src="@books.get(id).getCoverImg()" height=300px width=200px>
+	<h1>Titel: @book.getTitle()</h1>
+	<h1>Författare: @book.getAuthor()</h1>
+	<h1>Pris: @book.getPrice() kr</h1>
+	<img src="@book.getCoverImg()" height=300px width=200px>
 }
